@@ -1,0 +1,2 @@
+# NHCustomTextView
+一个可以自定义的TextView，可以添加PlaceHolder，很简单的小控件
