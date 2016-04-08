@@ -19,6 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self.view setBackgroundColor:[UIColor grayColor]];
+
+
+    UITapGestureRecognizer * tapAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tapAction];
+
     _nh = [[NHTextView alloc] initWithFrame:CGRectMake(10, 100, 300, 100)];
     [_nh setDelegate:self];
     _nh.placeHolderStr = @"请输入你想要的文字";
@@ -35,6 +40,10 @@
 
 -(void)textViewTextDidEndInput {
     NSLog(@"我结束输入");
+}
+
+-(void)tapAction {
+    [_nh endInput];
 }
 
 
